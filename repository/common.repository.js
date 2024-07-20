@@ -24,6 +24,8 @@ exports.remove = async (params) => {
       );
       if (del.modifiedCount === 0)
         return { status: HttpStatus.NOT_FOUND, message: "Data not found" };
+
+      
     }
 
     return { status: HttpStatus.OK, message: "Record delete successfull" };

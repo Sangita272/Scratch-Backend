@@ -1,5 +1,4 @@
 const { HttpStatus } = require("./httpStatus");
-const logger = require("./logger");
 
 const errorHandler = (error, params = {}) => {
   if (error.name === "ValidationError") {
@@ -24,7 +23,6 @@ const errorHandler = (error, params = {}) => {
   }
 
   params = JSON.stringify(params);
-  logger.error("params ", params, "error: ", error);
   return {
     status: HttpStatus.INTERNAL_SERVER_ERROR,
     message: error.message,

@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const { default: slugify } = require("slugify");
 const randomstring = require("randomstring");
 const PASSWORD_REGEX = /^.{8,}$/;
 const BIRTHYEAR_REGEX = /^\d{4}-\d{2}-\d{2}$/;
@@ -59,13 +58,6 @@ const dateDiffInMinutes = (date1, date2) => {
   return Math.floor(total / 1000 / 60);
 };
 
-const createSlug = (slug) => {
-  return slugify(slug, {
-    lower: true,
-    remove: undefined,
-    trim: true,
-  });
-};
 
 const checkEmptySpaceTabs = (data) => {
   const regex = /^\s*$/;
@@ -181,7 +173,6 @@ module.exports = {
   generateOTP,
   dateDiffInMinutes,
   aggregateFileConcat,
-  createSlug,
   aggregateArrayFileConcat,
   convertRangeStringToArray,
   BIRTHYEAR_REGEX,
