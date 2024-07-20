@@ -1,0 +1,13 @@
+/assets
+.env
+.htacess
+node_modules
+/public/logs
+package-lock.json
+yarn.lock
+*.txt
+*.java
+*.class
+/public
+.vscode
+/public/storage
